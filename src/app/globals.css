@@ -2,32 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+svg.logo-style-1 .logo_svg__color-1 {
+  @apply fill-black;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+svg.logo-style-1 .logo_svg__color-2 {
+  @apply fill-accent-1;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+svg.decor-plus-style-1 .decor-plus-style-1_svg__gray {
+  @apply fill-gray-200
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+svg.decor-plus-style-1 .decor-plus-style-1_svg__gray {
+  @apply fill-accent-5
+}
+
+svg.decor-plus-style-1 .decor-plus-style-1_svg__gray {
+  @apply fill-accent-6
+}
+
+.bg-gradient-social {
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    #b8d2f1 0deg,
+    #f289aa 60deg,
+    #c68bf0 106.09deg,
+    #d164da 153.75deg,
+    #c963e8 221.25deg,
+    #bfc2e8 258.75deg,
+    #ffc999 288.75deg,
+    #d0dbc9 315deg,
+    #bad0f1 334.13deg,
+    #ced8c8 358.13deg,
+    #ffffff 97deg,
+    rgba(255, 255, 255, 0) 360deg);
 }

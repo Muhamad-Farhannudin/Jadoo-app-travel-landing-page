@@ -16,6 +16,34 @@ export default function Home() {
   return (
     <div>
 
+      <Head>
+        <title>Jadoo</title>
+        <meta name="description" content="Jadoo App Travel" />
+        <link rel="icon" href="/favicon.ico" />
+
+        <meta 
+          property="og:url"
+          content="https://jadoo-app-travel-landing-page.vercel.app/"
+        />
+        <meta 
+          property="og:type"
+          content="website"
+        />
+        <meta 
+          property="og:title"
+          content="Jadoo"
+        />
+        <meta 
+          property="og:description"
+          content="Travel app, life app, aplikasi travel, aplikasi jalan-jalan, pesan guide, dan sebagainya."
+        />
+        <meta 
+          property="og:image"
+          content="https://jadoo-app-travel-landing-page.vercel.app/aplikasi-travel-online.jpg"
+        />
+
+      </Head>
+
       <div className="absolute z-10 w-full py-12">
         <Header />
       </div>

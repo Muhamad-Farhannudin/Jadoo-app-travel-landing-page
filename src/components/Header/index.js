@@ -1,15 +1,34 @@
-import React from 'react'
+"use client"
+
+import React, { useState, useCallback } from 'react'
 import Logo from '@/images/logo.svg'
 import Link from 'next/link';
 
 export default function Header() {
+  const [menu, setMenu] = useState(false);
+
+  const toggleMenu = useCallback(
+    () => {
+      setMenu((prev) => !prev)
+    },
+    [setMenu]
+  );
+
   return (
     <header className="max-w-7xl mx-auto px-4">
       <div className="flex justify-between items-center">
         <div className="w-28">
           <Logo className="logo-style-1" />
         </div>
-        <div className='w-auto'>
+
+        <button
+          className={['w-auto flex items-center justify-center lg:hidden p-2 appearance-none z-50', menu ? "text-white fixed right-4" : "relative text-inherit"].join(" ")}
+          onClick={toggleMenu}>
+          <span class="material-symbols-outlined">
+            {menu ? "close" : "menu"}
+          </span>
+        </button>
+        <div className={['lg:flex w-auto lg:opacity-100 lg:visible lg:h-auto z-20', menu ? "flex items-center justify-center h-screen w-full inset-0 opacity-100 visible fixed bg-black" : "hidden opacity-0 h-0 invisible"].join(" ")}>
           <ul className='flex items-center'>
             <li className=''>
               <Link href='/destinations' className='px-9 text-gray-800'>Destinations</Link>

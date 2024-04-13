@@ -11,6 +11,7 @@ import Twitter from '@/images/Twitter.svg'
 
 import Image from "next/legacy/image";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function Home() {
   return (

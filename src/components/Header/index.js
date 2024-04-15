@@ -34,22 +34,22 @@ export default function Header() {
               <Link href='#section-destination' className='px-9 text-slate-200 lg:text-gray-800'>Destinations</Link>
             </li>
             <li className=''>
-              <Link href='/hotels' className='px-9 text-slate-200 lg:text-gray-800'>Hotels</Link>
+              <Link href='/' className='px-9 text-slate-200 lg:text-gray-800'>Hotels</Link>
             </li>
             <li className=''>
-              <Link href='/flights' className='px-9 text-slate-200 lg:text-gray-800'>Flights</Link>
+              <Link href='/' className='px-9 text-slate-200 lg:text-gray-800'>Flights</Link>
             </li>
             <li className=''>
-              <Link href='/bookings' className='px-9 text-slate-200 lg:text-gray-800'>Bookings</Link>
+              <Link href='/' className='px-9 text-slate-200 lg:text-gray-800'>Bookings</Link>
             </li>
             <li className=''>
-              <Link href='/login' className='px-9 text-slate-200 lg:text-gray-800'>Login</Link>
+              <Link href='/' className='px-9 text-slate-200 lg:text-gray-800'>Login</Link>
             </li>
             <li className=''>
-              <Link href='/sign-up' className='px-5 text-slate-200 lg:text-gray-800 py-1 border border-gray-800 rounded-md mx-3'>Sign up</Link>
+              <Link href='/' className='px-5 text-slate-200 lg:text-gray-800 py-1 border border-gray-800 rounded-md mx-3'>Sign up</Link>
             </li>
             <li className=''>
-              <button href='/destinations' className='px-9 text-slate-200 lg:text-gray-800'>
+              <button href='/' className='px-9 text-slate-200 lg:text-gray-800'>
                 EN
                 <span className='absolute w-2 h-2 border-gray-800 border-b border-r transform rotate-45 translate-y-1/2 ml-2'></span>
               </button>

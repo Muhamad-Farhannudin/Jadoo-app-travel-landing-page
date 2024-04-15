@@ -133,10 +133,10 @@ export default function index() {
           <div className="hidden lg:flex lg:w-1/12 items-center justify-center">
             <div className="flex flex-col">
               <button onClick={fnPrev} className={[realSlide === 0 ? "text-gray-300" : "text-gray-800"].join(" ")}>
-                <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                <span className="material-symbols-outlined">keyboard_arrow_up</span>
               </button>
               <button onClick={fnNext} className={[realSlide === items.length - 1 ? "text-gray-300" : "text-gray-800"].join(" ")}>
-                <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                <span className="material-symbols-outlined">keyboard_arrow_down</span>
               </button>
             </div>
           </div>

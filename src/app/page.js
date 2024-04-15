@@ -1,3 +1,5 @@
+"use client"
+import { useState } from "react";
 import Header from "@/components/Header";
 import Testimonials from "@/components/Testimonials";
 import DecorIntersect from '@/images/decor-Intersect-1.svg'
@@ -9,14 +11,17 @@ import Facebook from '@/images/Facebook.svg'
 import Instagram from '@/images/Instagram.svg'
 import Twitter from '@/images/Twitter.svg'
 
+import Modal from '@/components/Modal'
+
 import Image from "next/legacy/image";
 import Link from "next/link";
 
 export default function Home() {
+  const [isActive, setActive] = useState(false)
   return (
-    <div className="max-w-full lg:max-w-7xl mx-auto">
+    <div className="max-w-full mx-auto scroll-smooth">
 
-      <div className="absolute z-20 lg:z-10 w-full lg:max-w-7xl  py-6 lg:py-12">
+      <div className="absolute z-20 lg:z-10 w-full py-6 lg:py-12">
         <Header />
       </div>
 
@@ -43,18 +48,28 @@ export default function Home() {
               <p className="text-gray-500 max-w-lg text-sm lg:text-base leading-6 lg:leading-8 mb-8">Built Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen it engrossed listening. Park gate sell they west hard for the.</p>
 
               <div className="flex">
-                <Link href="/"
+                <Link href="#section-category"
                   className="mr-11 bg-accent-1 shadow-accent-1/10 shadow-[0_20px_35px] px-6 py-4 text-white rounded-xl">Find out more
                 </Link>
 
-                <button className="flex items-center">
+                <button className="flex items-center" onClick={() => setActive((prev) => !prev)}>
                   <span className="mr-6 bg-accent-2 shadow-accent-2/30 inline-flex items-center justify-center px-4 py-4 rounded-full text-white shadow-sm-[0_15px_30px]">
-                    <span class="material-symbols-outlined ">
+                    <span className="material-symbols-outlined ">
                       play_arrow
                     </span>
                   </span>
                   <span className="hidden lg:block text-gray-500">Play Demo</span>
                 </button>
+                <Modal
+                  isActive={isActive}
+                  setActive={setActive}
+                  wrapperClassName='w-[750px]'
+                >
+                  <h3 className="text-lg font-serif mb-2">20 Best Places To Visit in Germany | Travel Guide</h3>
+                  <div className="aspect-video">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/iX8UPMDU1iY?si=tVw7iyYrslqPOSIG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+                </Modal>
               </div>
             </div>
             <div className="hidden lg:block w-[783px] h-[764px] pt-24 relative">
@@ -88,7 +103,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mb-32 text-xl">
+      <section className="mb-32 text-xl scroll-mt-20" id="section-category">
         <div className="max-w-7xl mx-auto relative px-4">
           <div className="absolute w-36 h-36 lg:-right-10 -top-10 -z-50">
             <DecorPlus1 className="decor-plus-style-1" />
@@ -174,7 +189,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mb-28">
+      <section className="mb-28 scroll-mt-20" id="section-destination">
         <div className="max-w-full lg:max-w-7xl mx-auto relative px-4">
           <div className="text-center flex flex-col mb-16">
             <h3 className="uppercase text-lg text-gray-500">Top Selling</h3>
@@ -197,7 +212,7 @@ export default function Home() {
                     <h6 className="text-lg">$5,42k</h6>
                   </div>
                   <div className="pt-4 px-5 flex items-center">
-                    <span class="material-symbols-outlined mr-2">near_me</span>
+                    <span className="material-symbols-outlined mr-2">near_me</span>
                     <span className="">10 Days Trip</span>
                   </div>
                 </div>
@@ -214,7 +229,7 @@ export default function Home() {
                     <h6 className="text-lg">$4,2k</h6>
                   </div>
                   <div className="pt-4 px-5 flex items-center">
-                    <span class="material-symbols-outlined mr-2">near_me</span>
+                    <span className="material-symbols-outlined mr-2">near_me</span>
                     <span className="">12 Days Trip</span>
                   </div>
                 </div>
@@ -231,7 +246,7 @@ export default function Home() {
                     <h6 className="text-lg">$15k</h6>
                   </div>
                   <div className="pt-4 px-5 flex items-center">
-                    <span class="material-symbols-outlined mr-2">near_me</span>
+                    <span className="material-symbols-outlined mr-2">near_me</span>
                     <span className="">28 Days Trip</span>
                   </div>
                 </div>
@@ -251,7 +266,7 @@ export default function Home() {
                 <ul className="flex flex-col gap-y-10 pr-0 lg:pr-10">
                   <li className="flex items-center">
                     <span className="bg-accent-1 rounded-xl flex flex-none text-white items-center justify-center w-12 h-12">
-                      <span class="material-symbols-outlined">
+                      <span className="material-symbols-outlined">
                         navigation
                       </span>
                     </span>
@@ -268,7 +283,7 @@ export default function Home() {
 
                   <li className="flex items-center">
                     <span className="bg-accent-2 rounded-xl flex flex-none text-white items-center justify-center w-12 h-12">
-                      <span class="material-symbols-outlined">
+                      <span className="material-symbols-outlined">
                         credit_card
                       </span>
                     </span>
@@ -284,7 +299,7 @@ export default function Home() {
 
                   <li className="flex items-center">
                     <span className="bg-accent-6 rounded-xl flex flex-none text-white items-center justify-center w-12 h-12">
-                      <span class="material-symbols-outlined">
+                      <span className="material-symbols-outlined">
                         airplanemode_active
                       </span>
                     </span>
@@ -347,23 +362,23 @@ export default function Home() {
                   </div>
                   <div className="flex gap-x-3 mx-4 mb-6">
                     <span className="bg-gray-300 text-gray-600 rounded-full flex items-center justify-center w-9 h-9">
-                      <span class="text-base material-symbols-outlined">
+                      <span className="text-base material-symbols-outlined">
                         spa
                       </span>
                     </span>
                     <span className="bg-gray-300 text-gray-600 rounded-full flex items-center justify-center w-9 h-9">
-                      <span class="text-base material-symbols-outlined">
+                      <span className="text-base material-symbols-outlined">
                         map
                       </span>
                     </span>
                     <span className="bg-gray-300 text-gray-600 rounded-full flex items-center justify-center w-9 h-9">
-                      <span class="text-base material-symbols-outlined">
+                      <span className="text-base material-symbols-outlined">
                         near_me
                       </span>
                     </span>
                   </div>
                   <div className="flex items-center justify-between mx-4">
-                    <span class="text-xl text-gray-500 mr-3 material-symbols-outlined">
+                    <span className="text-xl text-gray-500 mr-3 material-symbols-outlined">
                       Apartment
                     </span>
                     <span className="mr-auto text-gray-500">24 people going</span>
@@ -440,7 +455,7 @@ export default function Home() {
           <div className="w-full relative bg-white">
             <div className="relative">
               <div className="relative lg:absolute flex justify-center items-center z-30 text-white transfrom translate-y-0 lg:-translate-y-1/2 -translate-x-1/2 lg:translate-x-1/2 rounded-full top-8 lg:top-0 left-1/2 lg:right-0 w-16 h-16 bg-gradient-to-b from-accent-6/60 to-accent-6">
-                <span class="material-symbols-outlined">near_me</span>
+                <span className="material-symbols-outlined">near_me</span>
               </div>
               <div className="bg-accent-3/20 overflow-hidden rounded-tl-3xl lg:rounded-tl-[129px] rounded-lg lg:rounded-3xl relative z-20 pt-20 pb-20 mb-8">
                 <div className="w-auto lg:w-[248px] h-[290px] absolute z-0 -top-16 right-0 lg:-right-20 transfrom -rotate-90">
@@ -457,7 +472,7 @@ export default function Home() {
                     <form className="flex justify-center">
                       <fieldset className="relative mr-0 lg:mr-8">
                         <div className=" text-gray-500 absolute h-full w-16 flex items-center justify-center">
-                          <span class="material-symbols-outlined">
+                          <span className="material-symbols-outlined">
                             mail
                           </span>
                         </div>
@@ -473,7 +488,7 @@ export default function Home() {
                           Subscribe
                         </span>
                         <div className="block lg:hidden ">
-                          <span class="material-symbols-outlined">
+                          <span className="material-symbols-outlined">
                             search
                           </span>
                         </div>
